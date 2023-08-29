@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>carsvault-model kits car</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" integrity="sha512-57oZ/vW8ANMjR/KQ6Be9v/+/h6bq9/l3f0Oc7vn6qMqyhvPd1cvKBRWWpzu0QoneImqr2SkmO4MSqU+RpHom3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css" integrity="sha512-ELV+xyi8IhEApPS/pSj66+Jiw+sOT1Mqkzlh8ExXihe4zfqbWkxPRi8wptXIO9g73FSlhmquFlUOuMSoXz5IRw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+    body{
+        background: transparent;
+    }
+    
+    .navbar{
+        height: 100px;
+    }
+    h1{
+       color: #636897; 
+    }
+    h2{
+        color: #373b61; 
+    }
+    .topbar{
+      background-color: #636897;
+    }
+    #profile:hover{
+      color: white;
+    }
+    #cart:hover{
+      color: white;
+    }
+    .div-form{
+            box-shadow: 4px 4px 18px 7px rgba(0, 0, 0, 0.3);
+            width: 500px;
+            height: 350px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+     }
+     #btn-form{
+        margin-left: 110px;
+     }
+    
+</style>
+</head>
+<body>
+  <!-- topbar -->
+  <div class="container-fluid topbar ">
+     <div class="row">
+      <div class="col-lg-2 p-4">
+        <!-- Button trigger modal -->
+<button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" id="profile">
+  <i class="fa-solid fa-user" ></i>
+</button>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center text-uppercase" id="exampleModalLabel">Login</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form onsubmit="return validation()">
+          <p>Email</p>
+          <input type="email" id="email"><br>
+          <span id="msg1" style="color: red ;"></span><br>
+          <p>Password</p>
+          <input type="password" id="pass" ><br>
+          <span id="msg2" style="color: red;"></span><br>
+          <a class="btn  btn-danger" href="#"><p class="text-white">Create Account</p></a>
+          <hr>
+          <button type="submit" class="btn btn-secondary btn-outline-dark " id="button" >Login</button>
+          <button type="button" class="btn btn-secondary btn-outline-dark " data-bs-dismiss="modal">Close</button>
+         
+        </form>
+      </div>
+      <script>
+          function validation(){
+          var email= document.getElementById('email').value;
+          var password= document.getElementById('pass').value;
+  
+          if(email==""){
+              document.getElementById('msg1').innerHTML= "Please fill this field**";
+              return false;
+          }
+          else{
+              document.getElementById('msg1').innerHTML="";
+          }
+          if(password==""){
+              document.getElementById('msg2').innerHTML="Please fill this field**";
+              return false;
+          }
+          else{
+              document.getElementById('msg2').innerHTML="";
+          }
+      }
+      </script>
+    
+    </div>
+  </div>
+</div>
+      </div>
+      <div class="col-lg-8">
+        <h1 class="  text-lg-center text-uppercase text-decoration-underline text-white">Auto World</h1>
+        <p class="  text-lg-center text-uppercase text-dark"><i>Model Kits . Die-cast . Slot cars</i></p>
+      </div>
+      <div class="col-lg-2 p-4">
+        <button class="btn" id="cart"><i class="fa-solid fa-cart-shopping" ></i></button>
+      </div>
+     </div>
+  </div>
+  <!-- topbar end -->
+  <!-- navbar start -->
+   <div class="container-fluid">  
+        <nav class=" navbar navbar-expand-lg navbar-dark bg-dark  col-sm-12 col-md-12 col-lg-12 col-md-12" >
+            <div class=" container-fluid">
+              <a class="navbar-brand" href="#"><h1>Auto World</h1 ><p><i>Model kits car</i></p></a>
+             
+              <button class=" navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active m-3" aria-current="page" href="index.html">Home</a>
+                  </li>
+                
+                  <li class="nav-item dropdown  m-3">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Shop
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="diecast.html">Die cast</a></li>
+                      <li><a class="dropdown-item" href="popular.html">Popular products</a></li>
+                      <li><a class="dropdown-item" href="slotcars.html">Slot cars</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item  m-3"  >
+                    <a class="nav-link" href="exclusives.html" tabindex="-1" aria-disabled="true">
+                      Exclusives
+                  </li>
+                  <li class="nav-item m-3">
+                    <a class="nav-link " href="contact us.html" tabindex="-1" aria-disabled="true">Contact</a>
+                  </li>
+                  <li class="nav-item m-3">
+                    <a class="nav-link " href="about us.html" tabindex="-1" aria-disabled="true">About us</a>
+                  </li>
+                  <li class="nav-item m-3">
+                    <a class="nav-link" href="gift.html">Gift card</a>
+                  </li>
+                </ul>
+                <form class="d-flex" >
+                  <input id="button-nav" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-secondary btn-outline-light" type="submit">Search</button>
+                </form>
+              </div>
+            </div>
+          </nav>
+     
+         <!-- navbar-end -->
+
+     <!-- autocomp function -->
+     <script>
+         $(document).ready(function(){
+           var availabletags =[
+          " 4Gear Parts HO Scale",
+          "4Gear Slot Cars HO Scale",
+          "AFX Slot Cars & Pit Kits",
+          "Bodies & Chassis HO Scale",
+          "Super III Slot Cars HO Scale",
+          "Super III Pit Kit",
+          "ThunderJet Parts HO Scale",
+          "ThunderJet Ultra-G Slot Cars HO Scale",
+          "Track and Accessories HO Scale",
+          "Track Sets HO Scale",
+          "Xtraction Parts HO Scale",
+          "Xtraction Slot Cars HO Scale",
+           ];
+           $("#button-nav").autocomplete({
+             source : availabletags
+           });
+        });
+      </script>
+    </div>
+   
+    <!-- autocomp function end-->
+    <div class="container-fluid ">
+        <div class="row">
+            <div class="col-lg-12">
+    <h2  class="text-center text-uppercase mt-3">Create An Account</h2>
+    <div class="container div-form mt-lg-4 ">
+            <form>
+            <label>First Name: </label>
+          <input type="text" placeholder="Enter First Name" id="txt1"><br><br>
+          <label>Last Name:</label>
+          <input type="text" placeholder="Enter Last Name" id="txt3"><br><br>
+          <label>Email: </label>
+          <input type="text" placeholder="Enter Email" id="txt2"><br><br>
+          <label>Password:</label>
+          <input type="password" placeholder="Your Password" id="txt4"><br><br>
+          <label> Confirm Password:</label>
+          <input type="password" placeholder="Confirm Password" id="txt5"><br><br>
+          <input type="button" value="Submit" id="btn-form">
+            </form>
+
+            <script>
+            $(document).ready(function(){
+              $("#btn-form").click(function(){
+             var text1= $('#txt1').val();
+             var text2= $('#txt2').val();
+             var text3= $('#txt3').val();
+             var text4= $('#txt4').val();   
+             var text5= $('#txt5').val(); 
+            });
+         });
+</script>
+    </div>
+</div>
+</div>
+</div>
+      <!-- Footer start-->
+      <div class="container-fluid bg-secondary py-5 px-sm-3 px-md-5" style="margin-top: 90px;">
+        <div class="row pt-5">
+            <div class="col-lg-4 col-md-6 mb-5">
+                <h4 class="text-uppercase text-light mb-4">Get In Touch</h4>
+                <p class="mb-2"><i class="fa fa-map-marker-alt text-white mr-3"></i>Emirates Rd(E311) , Souk Al Arsah , Sharjah , UAE</p>
+                <p class="mb-2"><i class="fa fa-phone-alt text-white mr-3"></i>+97 345 67890</p>
+                <p><i class="fa fa-envelope text-white mr-3"></i>info@carsvault.com</p>
+                <h6 class="text-uppercase text-white py-2">Follow Us</h6>
+                <div class="d-flex justify-content-start">
+                    <a class="btn btn-lg btn-dark btn-outline-light btn-lg-square m-2" href="#"><i class="fab fa-twitter "></i></a>
+                    <a class="btn btn-lg btn-dark  btn-outline-light btn-lg-square m-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-lg btn-dark  btn-outline-light btn-lg-square m-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-lg btn-dark  btn-outline-light btn-lg-square m-2" href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-5">
+                <h4 class="text-uppercase text-light mb-4">Useful Links</h4>
+                <div class="d-flex flex-column justify-content-start">
+                    <a class="text-body mb-2" href="#"><i class="fa fa-angle-right text-white mr-2"></i>Private Policy</a>
+                    <a class="text-body mb-2" href="#"><i class="fa fa-angle-right text-white mr-2"></i>Term & Conditions</a>
+                    <a class="text-body mb-2" href="#"><i class="fa fa-angle-right text-white mr-2"></i>New Member Registration</a>
+                    <a class="text-body mb-2" href="#"><i class="fa fa-angle-right text-white mr-2"></i>Affiliate Programme</a>
+                    <a class="text-body mb-2" href="#"><i class="fa fa-angle-right text-white mr-2"></i>Return & Refund</a>
+                    <a class="text-body" href="#"><i class="fa fa-angle-right text-white mr-2"></i>Help & FQAs</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-5">
+                <h4 class="text-uppercase text-light mb-4">Gallery</h4>
+                <div class="row mx-n1">
+                    <div class="col-4 px-1 mb-2">
+                        <a href=""><img class="w-100" src="img/gallery-1.jpg" alt="" width="50px" height="110px"></a>
+                    </div>
+                    <div class="col-4 px-1 mb-2">
+                        <a href=""><img class="w-100" src="img/gallery-2.jpg" alt="" width="50px" height="110px"></a>
+                    </div>
+                    <div class="col-4 px-1 mb-2">
+                        <a href=""><img class="w-100" src="img/gallery-3.jpg" alt="" width="50px" height="110px"></a>
+                    </div>
+                    <div class="col-4 px-1 mb-2">
+                        <a href=""><img class="w-100" src="img/gallery-4.jpg" alt="" width="50px" height="110px"></a>
+                    </div>
+                    <div class="col-4 px-1 mb-2">
+                        <a href=""><img class="w-100" src="img/gallery-5.jpg" alt="" width="50px" height="110px"></a>
+                    </div>
+                    <div class="col-4 px-1 mb-2">
+                        <a href=""><img class="w-100" src="img/gallery-6.jpg" alt="" width="50px" height="110px"></a>
+                    </div>
+                </div>
+            </div>
+            <section class="">
+                <form action="">
+                 
+                  <div class="row d-flex justify-content-center">
+                    <div class="col-auto text-uppercase">
+                      <p class="pt-2">
+                        <strong>Sign up for our newsletter</strong>
+                      </p>
+                    </div>
+
+                    <div class="col-md-5 col-12">
+                      <div class="form-outline form-white  mb-4">
+                        <input type="email" id="form5Example21" class="form-control" />
+                        <label class="form-label" for="form5Example21">Email address</label>
+                      </div>
+                    </div>
+        
+                    <div class="col-auto">
+                      <button type="submit" class="btn btn-dark btn-outline-light mb-4">
+                        Subscribe
+                      </button>
+                    </div>
+                </div>
+                </form>
+              </section>
+        </div>
+    </div>
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.3);">
+        © 2023 Copyright:
+        <a class="text-dark" href="https://mdbootstrap.com/"><i><b>Auto World</b></i></a>
+      </div>
+<!-- Footer end-->
+</body>
+</html>

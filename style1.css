@@ -1,0 +1,107 @@
+section{
+    padding: 2px 9%; 
+}
+
+.heading{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 10px;
+    color:black;
+    padding: 1px;
+}
+.heading span{
+    text-transform: uppercase;
+    
+    color:orangered;
+    
+}
+.heading{
+    font-size:20px;
+}
+.featured .row{
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px ridge black;
+    border-radius: 2px;
+    background: white;
+    padding: 2px;
+    align-items: center;
+    margin: 1.5rem 0;
+    gap: 1.5rem;
+     width: 120%; 
+}
+.featured .row .content{
+    flex: 1 5px;
+    flex-direction: column;
+    margin-right: 60px;
+
+
+}
+.featured .row .image-container{
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    flex: 1 50rem;
+}
+.featured .row .image-container .small-image{
+    width: 20%;
+
+}
+.featured .row .image-container .big-image{
+    padding: 1px;
+    width: 80%;
+
+}
+.featured .row .image-container .small-image img{
+    width: 100%;
+    padding: 1px ;
+    border: 1px solid rgba(0, 0,0, .3);
+    cursor: pointer;
+
+}
+.featured .row .image-container .small-image  img:hover{
+    background:gray;
+}
+
+.featured .row .image-container .big-image img{
+    width:100%;
+
+}
+.featured .row .image-container .big-image  img:hover{
+    transform: scale(1.05);
+
+}
+.featured .row .content h3{
+    font-size: 20px;
+    color: black;
+
+}
+.featured .row .content .stars i{
+    font-size: 15px;
+    color: orangered;
+    padding: 5px 0;
+    
+}
+.featured .row .content p{
+    font-size: 15px;
+    color:gray;
+    padding: 1px 0;
+
+}
+.featured .row .content .price{
+    font-size: 15px;
+    color:black;
+    font-style: bold;
+
+}
+.featured .row .content span{
+    font-size: 15px;
+    color:orangered;
+    text-decoration: line-through;
+
+}
+
+
+
+
+
